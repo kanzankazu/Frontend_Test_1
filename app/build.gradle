@@ -1,6 +1,5 @@
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
 }
 
 apply from: "$rootDir/dependenies.gradle"
@@ -35,7 +34,11 @@ android {
     buildFeatures {
         viewBinding true
     }
+    kapt {
+        correctErrorTypes = true
+    }
 }
 
 dependencies {
+    implementation project(":core")
 }

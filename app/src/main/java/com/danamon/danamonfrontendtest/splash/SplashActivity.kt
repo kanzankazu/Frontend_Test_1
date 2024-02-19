@@ -1,7 +1,8 @@
-package com.danamon.danamonfrontendtest
+package com.danamon.danamonfrontendtest.splash
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.danamon.danamonfrontendtest.R
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -15,6 +15,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "Danamon Frontend Test"
 include ':app'
-include ':mylibrary'
+include ':core'
 include ':data'
 include ':feature'
