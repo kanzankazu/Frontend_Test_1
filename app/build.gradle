@@ -33,6 +33,7 @@ android {
     }
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
     kapt {
         correctErrorTypes = true
@@ -41,4 +42,5 @@ android {
 
 dependencies {
     implementation project(":core")
+    implementation project(":feature")
 }

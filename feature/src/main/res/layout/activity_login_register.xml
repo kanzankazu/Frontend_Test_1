@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/round_corner_16_accent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvActivityLoginRegisterTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/activity_margin_double"
+        android:fontFamily="@font/nunito_bold"
+        android:gravity="center"
+        android:paddingVertical="@dimen/activity_margin"
+        android:textColor="@color/baseWhite"
+        android:textSize="@dimen/dim_32sp"
+        app:layout_constraintBottom_toTopOf="@+id/mcvActivityLoginRegisterContent"
+        tools:layout_editor_absoluteX="32dp"
+        tools:text="Please Login" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvActivityLoginRegisterContent"
+        style="@style/MaterialCardViewShadowPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/activity_margin_double"
+        app:cardCornerRadius="@dimen/activity_margin"
+        app:cardElevation="@dimen/activity_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_margin">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilActivityLoginRegisterUsername"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label_username"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/colorPrimaryDark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etActivityLoginRegisterUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_person"
+                    android:drawablePadding="@dimen/activity_margin_half"
+                    android:fontFamily="@font/nunito_bold"
+                    android:inputType="text"
+                    tools:text="test username" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilActivityLoginRegisterEmail"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_margin"
+                android:hint="@string/label_email"
+                app:layout_constraintTop_toBottomOf="@id/tilActivityLoginRegisterUsername"
+                app:layout_goneMarginTop="0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etActivityLoginRegisterEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_person"
+                    android:drawablePadding="@dimen/activity_margin_half"
+                    android:fontFamily="@font/nunito_bold"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilActivityLoginRegisterPassword"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_margin"
+                android:hint="@string/label_password"
+                app:layout_constraintTop_toBottomOf="@id/tilActivityLoginRegisterEmail">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etActivityLoginRegisterPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_person"
+                    android:drawablePadding="@dimen/activity_margin_half"
+                    android:fontFamily="@font/nunito_bold"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RadioGroup
+                android:id="@+id/rgActivityLoginRegisterRole"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_margin"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/tilActivityLoginRegisterPassword"
+                tools:visibility="visible">
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/colorPrimary"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/label_user" />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/baseRed"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/label_admin" />
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvActivityLoginRegisterButtonTitle"
+        style="@style/regular.10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:background="@drawable/bg_primary_round_selector"
+        android:gravity="center"
+        android:padding="@dimen/activity_margin"
+        android:text="@string/label_login"
+        android:textColor="@color/baseWhite"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/mcvActivityLoginRegisterContent"
+        app:layout_constraintStart_toStartOf="@+id/mcvActivityLoginRegisterContent"
+        app:layout_constraintTop_toBottomOf="@+id/mcvActivityLoginRegisterContent" />
+
+    <TextView
+        android:id="@+id/tvActivityLoginRegisterChange"
+        style="@style/regular.10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/activity_margin_double"
+        android:gravity="center"
+        android:paddingVertical="@dimen/activity_margin"
+        android:textColor="@color/baseGrey"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="don't have an account yet? Come on, register" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

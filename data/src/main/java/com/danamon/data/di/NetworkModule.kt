@@ -1,8 +1,8 @@
 package com.danamon.data.di
 
 import android.content.Context
-import androidx.viewbinding.BuildConfig
 import com.chuckerteam.chucker.api.ChuckerInterceptor
+import com.danamon.data.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
