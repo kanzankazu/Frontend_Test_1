@@ -12,4 +12,5 @@ class MyApplication : Application() {
     @Inject
     @AppScope
     lateinit var appCoroutineScope: CoroutineScope
+
 }

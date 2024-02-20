@@ -2,7 +2,7 @@ package com.danamon.data.di
 
 import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerInterceptor
-import com.danamon.data.BuildConfig
+import com.danamon.core.ext.isDebug
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,20 +20,17 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideGsonConverterFactory() =
-        GsonConverterFactory.create()
+    fun provideGsonConverterFactory() = GsonConverterFactory.create()
 
     @Provides
     @Singleton
-    fun provideLoggingInterceptor() =
-        HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
+    fun provideLoggingInterceptor() = HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
 
     @Provides
     @Singleton
     fun getChuckerInterceptor(
         context: Context,
-    ) =
-        ChuckerInterceptor.Builder(context).build()
+    ) = ChuckerInterceptor.Builder(context).build()
 
     @Provides
     @Singleton
@@ -41,19 +38,21 @@ object NetworkModule {
         loggingInterceptor: HttpLoggingInterceptor,
         chuckerInterceptor: ChuckerInterceptor,
     ): OkHttpClient {
-        val builder = OkHttpClient.Builder()
+        val httpBuilder = OkHttpClient.Builder()
             .readTimeout(3, TimeUnit.MINUTES)
             .writeTimeout(3, TimeUnit.MINUTES)
             .retryOnConnectionFailure(true)
 
-        builder.apply {
-            if (BuildConfig.DEBUG) {
-                builder.addInterceptor(loggingInterceptor)
-                builder.addInterceptor(chuckerInterceptor)
+        httpBuilder.apply {
+            if (isDebug()) {
+                httpBuilder.addInterceptor(loggingInterceptor)
+                httpBuilder.addInterceptor(chuckerInterceptor)
+            } else {
+                if (isDebug()) addInterceptor(chuckerInterceptor)
             }
         }
 
-        return builder.build()
+        return httpBuilder.build()
     }
 
     @Provides

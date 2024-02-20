@@ -1,4 +1,4 @@
-package com.danamon.feature.module.login
+package com.danamon.feature.module.auth
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -43,7 +43,7 @@ class LogRegViewModel @Inject constructor(
     val loginUser = _loginUser.toLiveData()
     fun loginUser() {
         getLaunch {
-            _loginUser.postValue(userRepository.checkLogin(email.get(), password.get()))
+            _loginUser.postValue(userRepository.loginUser(email.get(), password.get()))
         }
     }
 
@@ -51,7 +51,7 @@ class LogRegViewModel @Inject constructor(
     val registerUser = _registerUser.toLiveData()
     fun registerUser() {
         getLaunch {
-            _registerUser.postValue(userRepository.saveNewUser(createUserEntity()))
+            _registerUser.postValue(userRepository.registerUser(createUserEntity()))
         }
     }
 

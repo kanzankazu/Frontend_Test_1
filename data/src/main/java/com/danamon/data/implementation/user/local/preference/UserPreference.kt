@@ -6,10 +6,11 @@ import android.content.Context
 import com.danamon.core.base.BasePreference
 
 class UserPreference(context: Context) : BasePreference(context) {
-    fun signOut() {
-        userEmail = ""
-        userName = ""
+    fun logout() {
         userId = ""
+        userName = ""
+        userEmail = ""
+        userRole = ""
     }
 
     /**
@@ -33,9 +34,16 @@ class UserPreference(context: Context) : BasePreference(context) {
             putSharedPrefString(EMAIL, value)
         }
 
+    var userRole: String
+        get() = getSharedPrefString(ROLE)
+        set(value) {
+            putSharedPrefString(ROLE, value)
+        }
+
     companion object {
-        const val UID: String = ""
-        const val NAME: String = ""
-        const val EMAIL: String = ""
+        const val UID = "UID"
+        const val NAME = "NAME"
+        const val EMAIL = "EMAIL"
+        const val ROLE = "ROLE"
     }
 }
