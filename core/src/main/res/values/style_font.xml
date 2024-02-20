@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="regular">
+        <item name="fontFamily">@font/nunito_regular</item>
+    </style>
+
+    <style name="regular.10">
+        <item name="android:textSize">10sp</item>
+    </style>
+</resources>

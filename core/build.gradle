@@ -5,7 +5,7 @@ plugins {
 apply from: "$rootDir/dependenies.gradle"
 
 android {
-    namespace 'com.danamon.mylibrary'
+    namespace 'com.danamon.core'
     compileSdk 34
 
     defaultConfig {
@@ -27,6 +27,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        buildConfig true
     }
 }
 

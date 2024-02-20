@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Danamon Frontend Test</string>
+    <string name="label_username">Username</string>
+    <string name="label_password">Password</string>
+    <string name="label_email">Email</string>
+    <string name="label_login">Login</string>
+    <string name="label_user">User</string>
+    <string name="label_admin">Admin</string>
+    <string name="label_register">Register</string>
+    <string name="label_hello_tester">Hello Tester!</string>
 </resources>

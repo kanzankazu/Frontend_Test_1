@@ -1,5 +1,5 @@
 package com.danamon.core.ext
 
-import androidx.viewbinding.BuildConfig
+import com.danamon.core.BuildConfig
 
 fun isDebug() = BuildConfig.DEBUG
