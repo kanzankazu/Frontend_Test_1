@@ -17,9 +17,13 @@
         <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
     </style>
 
-    <style name="MaterialCardViewShadowPrimary">
+    <style name="MaterialCardView">
+        <item name="cardCornerRadius">@dimen/activity_margin_half</item>
         <item name="cardPreventCornerOverlap">true</item>
-        <item name="cardElevation">@dimen/activity_margin_quarter</item>
+        <item name="cardElevation">@dimen/activity_margin_half</item>
+    </style>
+
+    <style name="MaterialCardViewShadowPrimary" parent="MaterialCardView">
         <item name="android:outlineProvider">background</item>
         <item name="android:outlineSpotShadowColor" tools:targetApi="p">@color/colorPrimary</item>
         <item name="android:outlineAmbientShadowColor" tools:targetApi="p">@color/colorPrimary
@@ -27,20 +31,14 @@
         <item name="rippleColor">@color/colorPrimary</item>
     </style>
 
-    <style name="MaterialCardViewShadowAccent">
-        <item name="cardPreventCornerOverlap">true</item>
-        <item name="cardElevation">@dimen/activity_margin_quarter</item>
-        <item name="android:outlineProvider">background</item>
+    <style name="MaterialCardViewShadowAccent" parent="MaterialCardView">
         <item name="android:outlineSpotShadowColor" tools:targetApi="p">@color/colorAccent</item>
         <item name="android:outlineAmbientShadowColor" tools:targetApi="p">@color/colorAccent
         </item>
         <item name="rippleColor">@color/colorAccent</item>
     </style>
 
-    <style name="MaterialCardViewShadowBlue">
-        <item name="cardPreventCornerOverlap">true</item>
-        <item name="cardElevation">@dimen/activity_margin_quarter_up</item>
-        <item name="cardCornerRadius">@dimen/activity_margin_half</item>
+    <style name="MaterialCardViewShadowBlue" parent="MaterialCardView">
         <item name="android:outlineProvider">background</item>
         <item name="android:outlineSpotShadowColor" tools:targetApi="p">@color/baseBlue</item>
         <item name="android:outlineAmbientShadowColor" tools:targetApi="p">@color/baseBlue

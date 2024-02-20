@@ -1,4 +1,4 @@
-package com.danamon.feature.module.login
+package com.danamon.feature.module.auth
 
 import android.view.LayoutInflater
 import androidx.activity.viewModels
@@ -11,6 +11,7 @@ import androidx.core.text.scale
 import androidx.core.widget.doOnTextChanged
 import com.danamon.core.base.BaseActivityBindingView
 import com.danamon.core.base.baseresponse.handleBaseResponse
+import com.danamon.core.ext.addClearTaskNewTask
 import com.danamon.core.ext.get
 import com.danamon.core.ext.getRadioGroupIndex
 import com.danamon.core.ext.isEmailValid
@@ -21,10 +22,15 @@ import com.danamon.core.ext.visibleView
 import com.danamon.core.ext.vmLoadDataRe
 import com.danamon.core.util.SpannableClick
 import com.danamon.feature.databinding.ActivityLoginRegisterBinding
+import com.danamon.feature.navigator.MainNavigation
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class LoginRegisterActivity : BaseActivityBindingView<ActivityLoginRegisterBinding>() {
+
+    @Inject
+    lateinit var mainNavigation: MainNavigation
 
     private val viewModel by viewModels<LogRegViewModel>()
 
@@ -118,6 +124,7 @@ class LoginRegisterActivity : BaseActivityBindingView<ActivityLoginRegisterBindi
     }
 
     private fun gotoMain() {
-        simpleToast("feature coming soon")
+        val intent = mainNavigation.createIntentMainActivity(this).addClearTaskNewTask()
+        startActivity(intent)
     }
 }

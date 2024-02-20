@@ -91,6 +91,8 @@ fun Double?.orNull(defaultNull: Double = 0.0): Double = this ?: defaultNull
 
 fun Int?.orNull(defaultNull: Int = 0): Int = this ?: defaultNull
 
+fun Long?.orNull(defaultNull: Long = 0L): Long = this ?: defaultNull
+
 fun Int?.orNull(defaultNull: String = "0", functionIfNotNull: (i: Int) -> String? = { null }): String {
     return if (this != null) {
         if (functionIfNotNull(this) != null) functionIfNotNull(this) ?: defaultNull

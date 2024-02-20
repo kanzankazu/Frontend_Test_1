@@ -1,6 +1,7 @@
 package com.danamon.core.base.baseresponse
 
 fun initBaseResponseLoading() = BaseResponse.Loading
+fun initBaseResponseEmpty() = BaseResponse.Empty
 fun <T> T.toBaseResponseSuccess() = BaseResponse.Success(this)
 fun String.toBaseResponseError(errorMessage: String = "") = BaseResponse.Error(errorMessage.ifEmpty { this })
 

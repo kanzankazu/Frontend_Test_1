@@ -15,5 +15,6 @@
     <dimen name="activity_margin_triple">64dp</dimen>
 
     <dimen name="dim_32sp">32sp</dimen>
+    <dimen name="prominent_threshold">100dp</dimen>
 
 </resources>

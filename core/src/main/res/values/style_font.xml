@@ -8,4 +8,20 @@
     <style name="regular.10">
         <item name="android:textSize">10sp</item>
     </style>
+
+    <style name="semi">
+        <item name="fontFamily">@font/nunito_semi_bold</item>
+    </style>
+
+    <style name="semi.10">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="bold">
+        <item name="fontFamily">@font/nunito_bold</item>
+    </style>
+
+    <style name="bold.10">
+        <item name="android:textSize">10sp</item>
+    </style>
 </resources>

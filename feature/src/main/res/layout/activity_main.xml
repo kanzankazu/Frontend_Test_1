@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/ablActivityMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/tbActivityMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:subtitleCentered="false"
+            app:subtitleTextAppearance="@style/regular.10"
+            app:subtitleTextColor="@android:color/white"
+            app:titleCentered="false"
+            app:titleTextAppearance="@style/regular"
+            app:titleTextColor="@android:color/white"
+            tools:subtitle="{EMAIL}"
+            tools:title="USERNAME" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.danamon.core.component.recyclerview.KanzanRecyclerviewComponent
+        android:id="@+id/rvActivityMain"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ablActivityMain"
+        app:layout_constraintVertical_bias="0.0"
+        tools:itemCount="5"
+        tools:layoutManager="GridLayoutManager"
+        tools:listitem="@layout/item_activity_main_user"
+        tools:spanCount="2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
