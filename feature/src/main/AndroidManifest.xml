@@ -4,10 +4,10 @@
 
     <application>
         <activity
-            android:name=".module.auth.LoginRegisterActivity"
+            android:name=".ui.auth.LoginRegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".module.main.MainActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="false" />
     </application>
 

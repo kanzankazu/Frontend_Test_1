@@ -1,4 +1,4 @@
-package com.danamon.feature.module.dialog
+package com.danamon.feature.ui.dialog
 
 import android.os.Bundle
 import android.view.LayoutInflater

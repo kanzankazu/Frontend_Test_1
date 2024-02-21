@@ -1,4 +1,4 @@
-package com.danamon.feature.module.dialog
+package com.danamon.feature.ui.dialog
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

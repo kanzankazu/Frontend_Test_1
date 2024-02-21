@@ -1,4 +1,4 @@
-package com.danamon.feature.module.auth
+package com.danamon.feature.ui.auth
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
