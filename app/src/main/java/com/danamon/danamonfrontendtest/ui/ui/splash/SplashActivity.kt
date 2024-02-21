@@ -9,6 +9,7 @@ import com.danamon.core.ext.addClearTaskNewTask
 import com.danamon.core.ext.simpleToast
 import com.danamon.core.ext.use
 import com.danamon.core.ext.vmLoadDataRe
+import com.danamon.core.util.typing
 import com.danamon.danamonfrontendtest.R
 import com.danamon.danamonfrontendtest.databinding.ActivitySplashBinding
 import com.danamon.feature.navigator.LoginRegisterNavigation
