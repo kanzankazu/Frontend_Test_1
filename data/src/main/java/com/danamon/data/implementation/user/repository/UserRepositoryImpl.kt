@@ -5,6 +5,7 @@ import com.danamon.core.base.baseresponse.BaseResponse
 import com.danamon.core.base.baseresponse.initBaseResponseEmpty
 import com.danamon.core.base.baseresponse.toBaseResponseError
 import com.danamon.core.base.baseresponse.toBaseResponseSuccess
+import com.danamon.data.R
 import com.danamon.data.api.user.model.JsonPlaceHolderPhoto
 import com.danamon.data.api.user.model.User
 import com.danamon.data.api.user.repository.UserRepository
@@ -34,7 +35,7 @@ class UserRepositoryImpl(
                     userPreference.userEmail = userEntity.email
                     userPreference.userRole = userEntity.role.toString()
                     Unit.toBaseResponseSuccess()
-                } else context.getString(com.danamon.core.R.string.message_user_is_not_registered_yet_please_register).toBaseResponseError()
+                } else context.getString(R.string.message_user_is_not_registered_yet_please_register).toBaseResponseError()
             } catch (e: Exception) {
                 e.toBaseResponseError()
             }
@@ -56,12 +57,12 @@ class UserRepositoryImpl(
         return withContext(ioDispatcher) {
             return@withContext try {
                 val id = userRequestDao.insertData(userEntity)
-                if (id != -1L) context.getString(com.danamon.core.R.string.message_your_registration_is_successful_please_log_in).toBaseResponseSuccess()
-                else context.getString(com.danamon.core.R.string.message_your_registration_failed_please_try_again).toBaseResponseError()
+                if (id != -1L) context.getString(R.string.message_your_registration_is_successful_please_log_in).toBaseResponseSuccess()
+                else context.getString(R.string.message_your_registration_failed_please_try_again).toBaseResponseError()
             } catch (e: Exception) {
                 val s = e.stackTraceToString()
                 if (s.contains("unique", true)) {
-                    context.getString(com.danamon.core.R.string.message_the_email_is_already_registered_by_someone_else).toBaseResponseError()
+                    context.getString(R.string.message_the_email_is_already_registered_by_someone_else).toBaseResponseError()
                 } else {
                     e.toBaseResponseError()
                 }
@@ -75,10 +76,10 @@ class UserRepositoryImpl(
                 val userId = userPreference.userId
                 if (userId.isNotEmpty()) {
                     userRequestDao.getData(userId.toLong())?.toUser()?.toBaseResponseSuccess() ?: kotlin.run {
-                        context.getString(com.danamon.core.R.string.label_user_not_found).toBaseResponseError()
+                        context.getString(R.string.label_user_not_found).toBaseResponseError()
                     }
                 } else {
-                    context.getString(com.danamon.core.R.string.label_user_not_found).toBaseResponseError()
+                    context.getString(R.string.label_user_not_found).toBaseResponseError()
                 }
             } catch (e: Exception) {
                 e.toBaseResponseError()

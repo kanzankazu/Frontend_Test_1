@@ -33,6 +33,6 @@ fun UserEntity.toUser() = User(
 
 fun User.toStringRole() = when (role) {
     1 -> "Admin"
-    else -> "Role"
+    else -> "User"
 }
 

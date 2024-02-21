@@ -5,7 +5,6 @@ plugins {
 apply from: "$rootDir/dependenies.gradle"
 
 android {
-    namespace 'com.danamon.core'
     compileSdk 34
 
     defaultConfig {

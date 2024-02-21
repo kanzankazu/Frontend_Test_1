@@ -1,100 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mcvItemActivityMainAdmin"
+    style="@style/MaterialCardViewShadowPrimary"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    app:cardElevation="@dimen/activity_margin"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:strokeColor="@color/colorPrimary"
+    app:strokeWidth="1dp">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/mcvItemActivityMainAdmin"
-        style="@style/MaterialCardViewShadowPrimary"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="@dimen/activity_margin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:padding="@dimen/activity_margin_half">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tvItemActivityMainAdminId"
+            style="@style/regular"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="@dimen/activity_margin_half">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            tools:text="{{Id}}" />
 
-            <TextView
-                android:id="@+id/tvItemActivityMainAdminId"
-                style="@style/regular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0"
-                tools:text="{{Id}}" />
+        <ImageView
+            android:id="@+id/ivItemActivityMainAdminRole"
+            style="@style/regular"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/activity_margin_half"
+            app:layout_constraintBottom_toBottomOf="@+id/tvItemActivityMainAdminId"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toEndOf="@id/tvItemActivityMainAdminId"
+            app:layout_constraintTop_toTopOf="@+id/tvItemActivityMainAdminId"
+            tools:src="@tools:sample/avatars"
+            tools:text="{{role}}" />
 
-            <TextView
-                android:id="@+id/tvItemActivityMainAdminRole"
-                style="@style/regular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/activity_margin_half"
-                app:layout_constraintBottom_toBottomOf="@+id/tvItemActivityMainAdminId"
-                app:layout_constraintStart_toEndOf="@id/tvItemActivityMainAdminId"
-                app:layout_constraintTop_toTopOf="@+id/tvItemActivityMainAdminId"
-                tools:text="{{role}}" />
+        <TextView
+            android:id="@+id/tvItemActivityMainAdminName"
+            style="@style/regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_margin_half"
+            android:layout_marginEnd="@dimen/activity_margin_half"
+            app:layout_constraintBottom_toBottomOf="@+id/tvItemActivityMainAdminId"
+            app:layout_constraintEnd_toStartOf="@+id/ivItemActivityMainAdminEdit"
+            app:layout_constraintStart_toEndOf="@+id/ivItemActivityMainAdminRole"
+            app:layout_constraintTop_toTopOf="@+id/tvItemActivityMainAdminId"
+            app:layout_constraintVertical_bias="0"
+            tools:text="{{username}}" />
 
-            <TextView
-                android:id="@+id/tvItemActivityMainAdminName"
-                style="@style/regular"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/activity_margin_half"
-                android:layout_marginEnd="@dimen/activity_margin_half"
-                app:layout_constraintBottom_toBottomOf="@+id/tvItemActivityMainAdminId"
-                app:layout_constraintEnd_toStartOf="@+id/ivItemActivityMainAdminEdit"
-                app:layout_constraintStart_toEndOf="@+id/tvItemActivityMainAdminRole"
-                app:layout_constraintTop_toTopOf="@+id/tvItemActivityMainAdminId"
-                app:layout_constraintVertical_bias="0"
-                tools:text="{{username}}" />
+        <TextView
+            android:id="@+id/tvItemActivityMainAdminEmail"
+            style="@style/regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_margin_half"
+            android:layout_marginEnd="@dimen/activity_margin_half"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivItemActivityMainAdminEdit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvItemActivityMainAdminId"
+            app:layout_constraintVertical_bias="0"
+            tools:text="{{email}}" />
 
-            <TextView
-                android:id="@+id/tvItemActivityMainAdminEmail"
-                style="@style/regular"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_margin_half"
-                android:layout_marginEnd="@dimen/activity_margin_half"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/ivItemActivityMainAdminEdit"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvItemActivityMainAdminId"
-                app:layout_constraintVertical_bias="0"
-                tools:text="{{email}}" />
+        <ImageView
+            android:id="@+id/ivItemActivityMainAdminEdit"
+            android:layout_width="@dimen/activity_margin_double_up"
+            android:layout_height="@dimen/activity_margin_double_up"
+            android:layout_marginEnd="@dimen/activity_margin_half"
+            android:src="@drawable/ic_user_edit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1.5"
+            app:layout_constraintEnd_toStartOf="@id/ivItemActivityMainAdminDelete"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
 
-            <ImageView
-                android:id="@+id/ivItemActivityMainAdminEdit"
-                android:layout_width="@dimen/activity_margin_double_up"
-                android:layout_height="@dimen/activity_margin_double_up"
-                android:layout_marginEnd="@dimen/activity_margin_half"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="1:1.5"
-                app:layout_constraintEnd_toStartOf="@id/ivItemActivityMainAdminDelete"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.5"
-                tools:src="@tools:sample/avatars" />
+        <ImageView
+            android:id="@+id/ivItemActivityMainAdminDelete"
+            android:layout_width="@dimen/activity_margin_double_up"
+            android:layout_height="@dimen/activity_margin_double_up"
+            android:src="@drawable/ic_user_remove"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
 
-            <ImageView
-                android:id="@+id/ivItemActivityMainAdminDelete"
-                android:layout_width="@dimen/activity_margin_double_up"
-                android:layout_height="@dimen/activity_margin_double_up"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="1:1.5"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.5"
-                tools:src="@tools:sample/avatars" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

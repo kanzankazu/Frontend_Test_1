@@ -2,11 +2,13 @@ package com.danamon.feature.module.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.danamon.core.component.recyclerview.base.BaseRecyclerViewFilterAdapter
 import com.danamon.core.ext.use
 import com.danamon.data.api.user.model.User
 import com.danamon.data.implementation.user.mapper.toStringRole
+import com.danamon.feature.R
 import com.danamon.feature.databinding.ItemActivityMainAdminBinding
 
 class MainAdminAdapter : BaseRecyclerViewFilterAdapter<User>() {
@@ -29,7 +31,13 @@ class MainAdminAdapter : BaseRecyclerViewFilterAdapter<User>() {
         fun setContent(data: User) = inflate.use {
             mcvItemActivityMainAdmin
             tvItemActivityMainAdminId.text = data.userId.toString()
-            tvItemActivityMainAdminRole.text = data.toStringRole()
+            ivItemActivityMainAdminRole.setImageDrawable(
+                ContextCompat.getDrawable(
+                    root.context,
+                    if (data.toStringRole().equals("admin", true)) R.drawable.ic_admin
+                    else R.drawable.ic_user
+                )
+            )
             tvItemActivityMainAdminName.text = data.username
             tvItemActivityMainAdminEmail.text = data.email
             tvItemActivityMainAdminEmail.setOnClickListener { }
