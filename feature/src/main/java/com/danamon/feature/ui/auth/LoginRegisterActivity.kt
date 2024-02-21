@@ -1,4 +1,4 @@
-package com.danamon.feature.module.auth
+package com.danamon.feature.ui.auth
 
 import android.view.LayoutInflater
 import androidx.activity.viewModels

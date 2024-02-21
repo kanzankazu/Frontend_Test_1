@@ -1,4 +1,4 @@
-package com.danamon.feature.module.main
+package com.danamon.feature.ui.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

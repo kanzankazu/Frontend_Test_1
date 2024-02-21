@@ -1,4 +1,4 @@
-package com.danamon.feature.module.main
+package com.danamon.feature.ui.main
 
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -18,9 +18,9 @@ import com.danamon.data.api.user.model.User
 import com.danamon.data.implementation.user.mapper.toStringRole
 import com.danamon.feature.R
 import com.danamon.feature.databinding.ActivityMainBinding
-import com.danamon.feature.module.dialog.EditUserBottomSheetDialog
-import com.danamon.feature.module.dialog.RemoveUserBottomSheetDialog
 import com.danamon.feature.navigator.LoginRegisterNavigation
+import com.danamon.feature.ui.dialog.EditUserBottomSheetDialog
+import com.danamon.feature.ui.dialog.RemoveUserBottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -138,7 +138,10 @@ class MainActivity : BaseActivityBindingView<ActivityMainBinding>() {
                 onEmailClick = { gotoOpenEmailApp(it) }
             }
             srlActivityMain.isActivated = false
-            srlActivityMain.setOnRefreshListener(null)
+            srlActivityMain.setOnRefreshListener {
+                srlActivityMain.isRefreshing = false
+                viewModel.getUserDatas()
+            }
             viewModel.getUserDatas()
         }
     }

@@ -2,10 +2,10 @@ package com.danamon.feature.di
 
 import android.content.Context
 import com.danamon.core.ext.makeIntent
-import com.danamon.feature.module.auth.LoginRegisterActivity
-import com.danamon.feature.module.main.MainActivity
 import com.danamon.feature.navigator.LoginRegisterNavigation
 import com.danamon.feature.navigator.MainNavigation
+import com.danamon.feature.ui.auth.LoginRegisterActivity
+import com.danamon.feature.ui.main.MainActivity
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

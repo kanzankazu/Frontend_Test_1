@@ -1,4 +1,4 @@
-package com.danamon.feature.module.main
+package com.danamon.feature.ui.main
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

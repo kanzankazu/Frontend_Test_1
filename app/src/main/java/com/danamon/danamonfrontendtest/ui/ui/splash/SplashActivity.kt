@@ -1,4 +1,4 @@
-package com.danamon.danamonfrontendtest.splash
+package com.danamon.danamonfrontendtest.ui.splash
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
