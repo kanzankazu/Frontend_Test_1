@@ -9,6 +9,8 @@ import androidx.core.text.color
 import androidx.core.text.inSpans
 import androidx.core.text.scale
 import androidx.core.widget.doOnTextChanged
+import com.danamon.core.Constant.minCharPassword
+import com.danamon.core.Constant.minCharUsername
 import com.danamon.core.base.BaseActivityBindingView
 import com.danamon.core.base.baseresponse.handleBaseResponse
 import com.danamon.core.ext.addClearTaskNewTask
@@ -38,21 +40,11 @@ class LoginRegisterActivity : BaseActivityBindingView<ActivityLoginRegisterBindi
     override val bindingInflater: (LayoutInflater) -> ActivityLoginRegisterBinding
         get() = ActivityLoginRegisterBinding::inflate
 
-    override fun setContent() = binding.use {
-        mcvActivityLoginRegisterContent
-        tilActivityLoginRegisterUsername
-        etActivityLoginRegisterUsername
-        tilActivityLoginRegisterEmail
-        etActivityLoginRegisterEmail
-        tilActivityLoginRegisterPassword
-        etActivityLoginRegisterPassword
-    }
-
     override fun setListener() = binding.use {
-        tilActivityLoginRegisterUsername.helperText = "minimum ${viewModel.minCharUsername} characters"
+        tilActivityLoginRegisterUsername.helperText = "minimum $minCharUsername characters"
         etActivityLoginRegisterUsername.doOnTextChanged { text, _, _, _ ->
             viewModel.username.set(
-                if (text.toString().length >= viewModel.minCharUsername) text.toString()
+                if (text.toString().length >= minCharUsername) text.toString()
                 else ""
             )
         }
@@ -62,10 +54,10 @@ class LoginRegisterActivity : BaseActivityBindingView<ActivityLoginRegisterBindi
                 else ""
             )
         }
-        tilActivityLoginRegisterPassword.helperText = "minimum ${viewModel.minCharPassword} characters"
+        tilActivityLoginRegisterPassword.helperText = "minimum $minCharPassword characters"
         etActivityLoginRegisterPassword.doOnTextChanged { text, _, _, _ ->
             viewModel.password.set(
-                if (text.toString().length >= viewModel.minCharPassword) text.toString()
+                if (text.toString().length >= minCharPassword) text.toString()
                 else ""
             )
         }

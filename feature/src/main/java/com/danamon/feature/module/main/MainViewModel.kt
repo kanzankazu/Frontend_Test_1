@@ -3,6 +3,7 @@ package com.danamon.feature.module.main
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.danamon.core.base.baseresponse.BaseResponse
+import com.danamon.core.base.baseresponse.initBaseResponseLoading
 import com.danamon.core.ext.getLaunch
 import com.danamon.core.ext.toLiveData
 import com.danamon.data.api.user.model.JsonPlaceHolderPhoto
@@ -15,6 +16,9 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     private val userRepository: UserRepository,
 ) : ViewModel() {
+    var isLoadMore = false
+    var currentPage = 1
+    private val limitPerPage = 10
 
     var userData: User? = null
     private val _getUserData = MutableLiveData<BaseResponse<User>>()
@@ -27,9 +31,10 @@ class MainViewModel @Inject constructor(
 
     private val _getListPhoto = MutableLiveData<BaseResponse<List<JsonPlaceHolderPhoto>>>()
     val getListPhoto = _getListPhoto.toLiveData()
-    fun getJsonPlaceHolderPhoto(page: Int) {
+    fun getJsonPlaceHolderPhoto() {
+        _getListPhoto.postValue(initBaseResponseLoading())
         getLaunch {
-            _getListPhoto.postValue(userRepository.getJsonPlaceHolderPhoto(page))
+            _getListPhoto.postValue(userRepository.getJsonPlaceHolderPhoto(currentPage, limitPerPage))
         }
     }
 

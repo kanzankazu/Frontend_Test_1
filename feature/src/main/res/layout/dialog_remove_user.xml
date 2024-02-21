@@ -1,0 +1,77 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/v"
+        android:layout_width="43dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/activity_margin_half"
+        android:background="@color/baseGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDialogRemoveUser"
+        style="@style/bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/activity_margin"
+        android:layout_marginTop="@dimen/activity_margin_double"
+        android:gravity="center"
+        android:text="@string/message_are_you_sure_you_want_to_delete_this_account_if_so_please_enter_your_password"
+        android:textColor="@color/baseBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDialogRemoveUserPassword"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/activity_margin"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:hint="@string/label_password"
+        app:endIconDrawable="@drawable/selector_password_toggle"
+        app:endIconMode="password_toggle"
+        app:layout_constraintTop_toBottomOf="@+id/tvDialogRemoveUser"
+        tools:layout_editor_absoluteX="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDialogRemoveUserPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_password"
+            android:drawablePadding="@dimen/activity_margin_half"
+            android:fontFamily="@font/nunito_bold"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tvDialogRemoveUserButtonTitle"
+        style="@style/regular.10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/activity_margin"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:layout_marginBottom="@dimen/activity_margin"
+        android:background="@drawable/bg_primary_round_selector"
+        android:gravity="center"
+        android:padding="@dimen/activity_margin"
+        android:text="Delete"
+        android:textColor="@color/baseWhite"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilDialogRemoveUserPassword" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

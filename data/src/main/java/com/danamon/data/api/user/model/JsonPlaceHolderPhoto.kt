@@ -6,4 +6,5 @@ data class JsonPlaceHolderPhoto(
     var thumbnailUrl: String = "",
     var title: String = "",
     var url: String = "",
+    var loading: Boolean = false,
 )

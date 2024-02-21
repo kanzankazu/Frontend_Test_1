@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="message_your_password_is_incorrect">your password is incorrect</string>
+    <string name="message_data_changed_successfully">data changed successfully</string>
+    <string name="message_data_failed_to_change">data failed to change</string>
+    <string name="message_data_failed_to_delete">data failed to delete</string>
+</resources>

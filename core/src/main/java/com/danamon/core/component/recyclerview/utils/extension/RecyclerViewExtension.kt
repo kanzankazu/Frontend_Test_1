@@ -45,7 +45,7 @@ fun RecyclerView.setRecyclerView(
     minScaleDistanceFactor: Float = 1f,
     scaleDownBy: Float = 0f,
     position: Int = -1,
-    snapHelper: SnapHelper = LinearSnapHelper(),
+    snapHelper: SnapHelper? = null,
     onSnapPositionChangeListener: SnapOnScrollListener.OnSnapPositionChangeListener = object : SnapOnScrollListener.OnSnapPositionChangeListener {
         override fun onSnapPositionChange(position: Int) = Unit
     },
