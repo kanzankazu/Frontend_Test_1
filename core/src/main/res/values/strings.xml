@@ -14,4 +14,5 @@
     <string name="message_user_is_not_registered_yet_please_register">User is not registered yet, please register</string>
     <string name="message_your_registration_failed_please_try_again">Your registration failed, please try again</string>
     <string name="message_your_registration_is_successful_please_log_in">Your registration is successful, please log in</string>
+    <string name="message_are_you_sure_you_want_to_delete_this_account_if_so_please_enter_your_password">Are you sure you want to delete %s ?\nIf so, please enter your password.</string>
 </resources>

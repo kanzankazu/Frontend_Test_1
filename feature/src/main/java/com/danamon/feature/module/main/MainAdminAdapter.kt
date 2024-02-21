@@ -13,9 +13,9 @@ import com.danamon.feature.databinding.ItemActivityMainAdminBinding
 
 class MainAdminAdapter : BaseRecyclerViewFilterAdapter<User>() {
 
-    private val onEditClick: () -> Unit = {}
-    private val onRemoveClick: () -> Unit = {}
-    private val onEmailClick: () -> Unit = {}
+    var onEditClick: (User) -> Unit = {}
+    var onRemoveClick: (User) -> Unit = {}
+    var onEmailClick: (String) -> Unit = {}
 
     override fun onCreateView(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return MainAdminAdapterHolder(ItemActivityMainAdminBinding.inflate(LayoutInflater.from(parent.context), parent, false))
@@ -40,9 +40,9 @@ class MainAdminAdapter : BaseRecyclerViewFilterAdapter<User>() {
             )
             tvItemActivityMainAdminName.text = data.username
             tvItemActivityMainAdminEmail.text = data.email
-            tvItemActivityMainAdminEmail.setOnClickListener { }
-            ivItemActivityMainAdminEdit.setOnClickListener { }
-            ivItemActivityMainAdminDelete.setOnClickListener { }
+            tvItemActivityMainAdminEmail.setOnClickListener { onEmailClick.invoke(data.email) }
+            ivItemActivityMainAdminEdit.setOnClickListener { onEditClick.invoke(data) }
+            ivItemActivityMainAdminDelete.setOnClickListener { onRemoveClick.invoke(data) }
         }
     }
 }

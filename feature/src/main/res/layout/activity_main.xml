@@ -32,19 +32,43 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <com.danamon.core.component.recyclerview.KanzanRecyclerviewComponent
-        android:id="@+id/rvActivityMain"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srlActivityMain"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/pbActivityMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ablActivityMain"
-        app:layout_constraintVertical_bias="0.0"
-        tools:itemCount="5"
-        tools:layoutManager="GridLayoutManager"
-        tools:listitem="@layout/item_activity_main_user"
-        tools:spanCount="2" />
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsvActivityMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.danamon.core.component.recyclerview.KanzanRecyclerviewComponent
+                android:id="@+id/rvActivityMain"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                tools:itemCount="5"
+                tools:layoutManager="GridLayoutManager"
+                tools:listitem="@layout/item_activity_main_user"
+                tools:spanCount="2" />
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ProgressBar
+        android:id="@+id/pbActivityMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progressBackgroundTint="@color/colorPrimary"
+        android:progressTint="@color/colorPrimary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/srlActivityMain"
+        tools:visibility="visible" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

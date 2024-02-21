@@ -1,0 +1,135 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/v"
+        android:layout_width="43dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/activity_margin_half"
+        android:background="@color/baseGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDialogEditUserUsername"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/activity_margin"
+        android:layout_marginTop="@dimen/activity_margin_double"
+        android:hint="@string/label_username"
+        app:boxStrokeColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDialogEditUserUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_user"
+            android:drawablePadding="@dimen/activity_margin_half"
+            android:fontFamily="@font/nunito_bold"
+            android:inputType="text"
+            tools:text="test username" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDialogEditUserEmail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/activity_margin"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:hint="@string/label_email"
+        app:layout_constraintTop_toBottomOf="@id/tilDialogEditUserUsername"
+        app:layout_goneMarginTop="0dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDialogEditUserEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="@dimen/activity_margin_half"
+            android:fontFamily="@font/nunito_bold"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDialogEditUserPassword"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/activity_margin"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:hint="@string/label_password"
+        app:endIconDrawable="@drawable/selector_password_toggle"
+        app:endIconMode="password_toggle"
+        app:layout_constraintTop_toBottomOf="@id/tilDialogEditUserEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDialogEditUserPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_password"
+            android:drawablePadding="@dimen/activity_margin_half"
+            android:fontFamily="@font/nunito_bold"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/rgDialogEditUserRole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/activity_margin"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tilDialogEditUserPassword"
+        tools:layout_editor_absoluteX="16dp">
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="@color/colorPrimary"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/label_user" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="@color/baseRed"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/label_admin" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvDialogEditUserButtonTitle"
+        style="@style/regular.10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/activity_margin"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:layout_marginBottom="@dimen/activity_margin"
+        android:background="@drawable/bg_primary_round_selector"
+        android:gravity="center"
+        android:padding="@dimen/activity_margin"
+        android:text="Edit"
+        android:textColor="@color/baseWhite"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgDialogEditUserRole" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

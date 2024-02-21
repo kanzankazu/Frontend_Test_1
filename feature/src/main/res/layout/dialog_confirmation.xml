@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/activity_margin"
+    android:paddingBottom="@dimen/activity_margin">
+
+    <View
+        android:id="@+id/v"
+        android:layout_width="43dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="@dimen/activity_margin_half"
+        android:background="@color/baseGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageConfirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_margin_double"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textConfirmationTitle"
+        style="@style/bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_margin_half_up"
+        android:textColor="@color/baseBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageConfirmation"
+        tools:text="Confirm Question?" />
+
+    <TextView
+        android:id="@+id/textConfirmationDesc"
+        style="@style/regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_margin_half_up"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textConfirmationTitle"
+        tools:text="Detail penjelasan jika perlu." />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_margin_up"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textConfirmationDesc">
+
+        <TextView
+            android:id="@+id/buttonNegative"
+            style="@style/bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_primary_round_disable"
+            android:gravity="center"
+            android:padding="@dimen/activity_margin_half"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/buttonPositive"
+            style="@style/bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_margin"
+            android:layout_weight="1"
+            android:background="@drawable/bg_primary_round_selector"
+            android:gravity="center"
+            android:padding="@dimen/activity_margin_half"
+            android:textColor="@color/baseWhite"
+            tools:text="@tools:sample/lorem" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

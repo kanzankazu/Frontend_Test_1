@@ -53,6 +53,35 @@ class UserRepositoryImpl(
         }
     }
 
+    override suspend fun removeUser(password: String, userId: Long): BaseResponse<String> {
+        return withContext(ioDispatcher) {
+            return@withContext try {
+                val emailLogin = userPreference.userEmail
+                val userEntity = userRequestDao.getData(emailLogin, password)
+                if (userEntity != null) {
+                    userRequestDao.deleteData(userId)
+                    context.getString(R.string.message_data_failed_to_delete).toBaseResponseSuccess()
+                } else {
+                    context.getString(R.string.message_your_password_is_incorrect).toBaseResponseError()
+                }
+            } catch (e: Exception) {
+                e.toBaseResponseError()
+            }
+        }
+    }
+
+    override suspend fun editUser(userEntity: UserEntity): BaseResponse<String> {
+        return withContext(ioDispatcher) {
+            return@withContext try {
+                val id = userRequestDao.updateData(userEntity)
+                if (id != 0) context.getString(R.string.message_data_changed_successfully).toBaseResponseSuccess()
+                else context.getString(R.string.message_data_failed_to_change).toBaseResponseError()
+            } catch (e: Exception) {
+                e.toBaseResponseError()
+            }
+        }
+    }
+
     override suspend fun registerUser(userEntity: UserEntity): BaseResponse<String> {
         return withContext(ioDispatcher) {
             return@withContext try {
@@ -70,10 +99,10 @@ class UserRepositoryImpl(
         }
     }
 
-    override suspend fun getUserData(): BaseResponse<User> {
+    override suspend fun getUserData(userIdTarget: String): BaseResponse<User> {
         return withContext(ioDispatcher) {
             return@withContext try {
-                val userId = userPreference.userId
+                val userId = userIdTarget.ifEmpty { userPreference.userId }
                 if (userId.isNotEmpty()) {
                     userRequestDao.getData(userId.toLong())?.toUser()?.toBaseResponseSuccess() ?: kotlin.run {
                         context.getString(R.string.label_user_not_found).toBaseResponseError()
@@ -109,10 +138,10 @@ class UserRepositoryImpl(
         }
     }
 
-    override suspend fun getJsonPlaceHolderPhoto(page: Int): BaseResponse<List<JsonPlaceHolderPhoto>> {
+    override suspend fun getJsonPlaceHolderPhoto(page: Int, limit: Int): BaseResponse<List<JsonPlaceHolderPhoto>> {
         return withContext(context = ioDispatcher) {
             try {
-                when (val jsonPlaceHolderPhoto = userService.jsonPlaceHolderPhoto(page)) {
+                when (val jsonPlaceHolderPhoto = userService.jsonPlaceHolderPhoto(page, limit)) {
                     null -> initBaseResponseEmpty()
                     else -> jsonPlaceHolderPhoto.toJsonPlaceHolderPhoto().toBaseResponseSuccess()
                 }
