@@ -10,16 +10,16 @@ This application was created as an implementation example for an Android applica
 
 ## Technologies and Libraries Used
 
-1. Kotlin: The programming language used in developing the application.
-2. Android Studio: Integrated Development Environment (IDE) for Android.
-3. Hilt Dagger: Used for dependency management.
-4. MVVM (Model-View-ViewModel): Architectural design pattern used to separate business logic from the view.
-5. Room: SQLite database library for Android.
-6. Retrofit: HTTP client library for communication with the backend.
-7. Chuck Logging: Facilitates logging and debugging in the development process.
-8. Coroutine: Manages asynchronous operations easily and efficiently.
-9. Glide: Library for loading and displaying images easily and efficiently.
-10. Material UI: UI component library that provides a set of pre-designed components following Material Design guidelines.
+1. Kotlin
+2. Android Studio
+3. Hilt Dagger
+4. MVVM (Model-View-ViewModel)
+5. Room
+6. Retrofit
+7. Chuck Logging
+8. Coroutine
+9. Glide
+10. Material UI
 
 ## Architecture and Project Structure
 
