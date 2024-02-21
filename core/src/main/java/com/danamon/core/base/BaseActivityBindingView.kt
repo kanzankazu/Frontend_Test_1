@@ -19,7 +19,7 @@ abstract class BaseActivityBindingView<VB : ViewBinding> : AppCompatActivity() {
     protected open fun setActivityResult() {}
     protected open fun setSubscribeToLiveData() {}
     protected open fun getBundleData() {}
-    protected abstract fun setContent()
+    protected open fun setContent() {}
     protected open fun setListener() {}
     protected open fun getData() {}
 

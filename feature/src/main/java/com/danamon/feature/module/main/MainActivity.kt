@@ -26,7 +26,6 @@ class MainActivity : BaseActivityBindingView<ActivityMainBinding>() {
 
     private val adapterAdmin by lazy { MainAdminAdapter() }
     private val adapterUser by lazy { MainUserAdapter() }
-
     private val viewModel by viewModels<MainViewModel>()
 
     override val bindingInflater: (LayoutInflater) -> ActivityMainBinding
@@ -66,8 +65,8 @@ class MainActivity : BaseActivityBindingView<ActivityMainBinding>() {
                 onEmpty = {},
                 onError = { simpleToast(it) },
                 onSuccess = {
-                    it.filter { it.userId != viewModel.userData?.userId }
-                    adapterAdmin.setData(it as ArrayList<User>)
+                    val list = it.filter { it.userId != viewModel.userData?.userId }
+                    adapterAdmin.setData(list as ArrayList<User>)
                 }
             )
         }

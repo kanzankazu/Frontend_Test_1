@@ -6,7 +6,6 @@ plugins {
 apply from: "$rootDir/dependenies.gradle"
 
 android {
-    namespace 'com.danamon.feature'
     compileSdk 34
 
     defaultConfig {

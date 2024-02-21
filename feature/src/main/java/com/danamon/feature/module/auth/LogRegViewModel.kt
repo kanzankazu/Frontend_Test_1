@@ -16,6 +16,8 @@ import javax.inject.Inject
 class LogRegViewModel @Inject constructor(
     private val userRepository: UserRepository,
 ) : ViewModel() {
+    val minCharUsername = 5
+    val minCharPassword = 6
 
     val isLogin = MutableLiveData(true)
 

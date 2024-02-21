@@ -10,6 +10,7 @@ import com.danamon.core.ext.simpleToast
 import com.danamon.core.ext.use
 import com.danamon.core.ext.vmLoadDataRe
 import com.danamon.core.util.typing
+import com.danamon.danamonfrontendtest.R
 import com.danamon.danamonfrontendtest.databinding.ActivitySplashBinding
 import com.danamon.feature.navigator.LoginRegisterNavigation
 import com.danamon.feature.navigator.MainNavigation
@@ -32,7 +33,7 @@ class SplashActivity : BaseActivityBindingView<ActivitySplashBinding>() {
         get() = ActivitySplashBinding::inflate
 
     override fun setContent() = binding.use {
-        tvActivitySplash.typing(getString(com.danamon.core.R.string.label_hello_tester), delayMillis = 100) {
+        tvActivitySplash.typing(getString(R.string.label_hello_tester), delayMillis = 100) {
             viewModel.checkLogin()
         }
     }

@@ -21,6 +21,7 @@ import com.danamon.core.ext.use
 import com.danamon.core.ext.visibleView
 import com.danamon.core.ext.vmLoadDataRe
 import com.danamon.core.util.SpannableClick
+import com.danamon.feature.R
 import com.danamon.feature.databinding.ActivityLoginRegisterBinding
 import com.danamon.feature.navigator.MainNavigation
 import dagger.hilt.android.AndroidEntryPoint
@@ -48,13 +49,10 @@ class LoginRegisterActivity : BaseActivityBindingView<ActivityLoginRegisterBindi
     }
 
     override fun setListener() = binding.use {
-        val minCharUsername = 5
-        val minCharPassword = 6
-
-        tilActivityLoginRegisterUsername.helperText = "minimum $minCharUsername characters"
+        tilActivityLoginRegisterUsername.helperText = "minimum ${viewModel.minCharUsername} characters"
         etActivityLoginRegisterUsername.doOnTextChanged { text, _, _, _ ->
             viewModel.username.set(
-                if (text.toString().length >= minCharUsername) text.toString()
+                if (text.toString().length >= viewModel.minCharUsername) text.toString()
                 else ""
             )
         }
@@ -64,10 +62,10 @@ class LoginRegisterActivity : BaseActivityBindingView<ActivityLoginRegisterBindi
                 else ""
             )
         }
-        tilActivityLoginRegisterPassword.helperText = "minimum $minCharPassword characters"
+        tilActivityLoginRegisterPassword.helperText = "minimum ${viewModel.minCharPassword} characters"
         etActivityLoginRegisterPassword.doOnTextChanged { text, _, _, _ ->
             viewModel.password.set(
-                if (text.toString().length >= minCharPassword) text.toString()
+                if (text.toString().length >= viewModel.minCharPassword) text.toString()
                 else ""
             )
         }
@@ -100,12 +98,12 @@ class LoginRegisterActivity : BaseActivityBindingView<ActivityLoginRegisterBindi
 
     private fun handleLoginRegisterState(isLogin: Boolean) = binding.use {
         tvActivityLoginRegisterTitle.text = if (isLogin) "Please Login" else "Please Register"
-        tvActivityLoginRegisterButtonTitle.text = if (isLogin) getString(com.danamon.core.R.string.label_login) else getString(com.danamon.core.R.string.label_register)
+        tvActivityLoginRegisterButtonTitle.text = if (isLogin) getString(R.string.label_login) else getString(R.string.label_register)
         tvActivityLoginRegisterChange.text = buildSpannedString {
             append(if (isLogin) "don't have an account yet? " else "already have an account? ")
             bold {
                 scale(1.1f) {
-                    color(ContextCompat.getColor(this@LoginRegisterActivity, com.danamon.core.R.color.colorPrimary)) {
+                    color(ContextCompat.getColor(this@LoginRegisterActivity, R.color.colorPrimary)) {
                         inSpans(SpannableClick(tvActivityLoginRegisterChange, onClick = {
                             viewModel.isLogin.set(!viewModel.isLogin.get())
                         })) {
