@@ -1,4 +1,4 @@
-package com.danamon.danamonfrontendtest.ui.splash
+package com.danamon.danamonfrontendtest.ui.ui.splash
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
