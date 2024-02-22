@@ -1,6 +1,7 @@
 package com.danamon.feature.ui.auth
 
 import android.view.LayoutInflater
+import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.core.text.bold
@@ -13,10 +14,13 @@ import com.danamon.core.Constant.minCharPassword
 import com.danamon.core.Constant.minCharUsername
 import com.danamon.core.base.BaseActivityBindingView
 import com.danamon.core.base.baseresponse.handleBaseResponse
+import com.danamon.core.ext.PermissionEnumArray
 import com.danamon.core.ext.addClearTaskNewTask
+import com.danamon.core.ext.checkPermissions
 import com.danamon.core.ext.get
 import com.danamon.core.ext.getRadioGroupIndex
 import com.danamon.core.ext.isEmailValid
+import com.danamon.core.ext.resultMultiplePermissions
 import com.danamon.core.ext.set
 import com.danamon.core.ext.simpleToast
 import com.danamon.core.ext.use
@@ -32,6 +36,8 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class LoginRegisterActivity : BaseActivityBindingView<ActivityLoginRegisterBinding>() {
 
+    private lateinit var resultMultiplePermissionss: ActivityResultLauncher<Array<String>>
+
     @Inject
     lateinit var mainNavigation: MainNavigation
 
@@ -39,6 +45,14 @@ class LoginRegisterActivity : BaseActivityBindingView<ActivityLoginRegisterBindi
 
     override val bindingInflater: (LayoutInflater) -> ActivityLoginRegisterBinding
         get() = ActivityLoginRegisterBinding::inflate
+
+    override fun setActivityResult() {
+        resultMultiplePermissionss = resultMultiplePermissions()
+    }
+
+    override fun setContent() {
+        checkPermissions(PermissionEnumArray.POST_NOTIFICATIONS, resultMultiplePermissionss)
+    }
 
     override fun setListener() = binding.use {
         tilActivityLoginRegisterUsername.helperText = "minimum $minCharUsername characters"
