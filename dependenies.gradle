@@ -57,8 +57,8 @@ dependencies {
     /*Retrofit_Chuck*/
 //    debugApi "com.readystatesoftware.chuck:library:1.1.0"
 //    releaseApi "com.readystatesoftware.chuck:library:1.1.0"
-    debugApi "com.github.chuckerteam.chucker:library:3.5.2"
-    releaseApi "com.github.chuckerteam.chucker:library:3.5.2"
+    debugImplementation "com.github.chuckerteam.chucker:library:3.5.2"
+    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:3.5.2"
 
     // coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
