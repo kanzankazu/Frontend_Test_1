@@ -7,6 +7,8 @@ This application was created as an implementation example for an Android applica
 - Login: Users can sign in to the application using valid credentials.
 - Register: Users can register to create a new account.
 - Main Page: The main page displays content according to the user's role, The application has different access and display between admin and user.
+    - admin page : show all user and can manage user (edit and delete user)
+    - user page : show all data form https://jsonplaceholder.typicode.com/photos and i used paging and limit
 
 ## Technologies and Libraries Used
 
@@ -73,3 +75,12 @@ This project uses modular architecture to separate the parts of the application.
 4. Synchronize the project if needed.
 5. Make sure you have an emulator or connected physical device to run the application.
 6. Run the project by clicking the "Run" button in Android Studio.
+
+## Preview Apps
+apk test
+: https://drive.google.com/file/d/1P_uFe319f3zIPzGleGKmQiAMAtXjTQk3/view?usp=drive_link
+
+![Login Page](https://firebasestorage.googleapis.com/v0/b/kanzankazu-itung2an.appspot.com/o/project%2F1709049440219.jpg?alt=media&token=4096f55e-c942-47f6-8f3b-3fef32c26d72)
+![Register Page](https://firebasestorage.googleapis.com/v0/b/kanzankazu-itung2an.appspot.com/o/project%2F1709049440217.jpg?alt=media&token=f3b82764-de19-4f53-8c57-e4f10da4aeb1)
+![Admin Page](https://firebasestorage.googleapis.com/v0/b/kanzankazu-itung2an.appspot.com/o/project%2F1709049440215.jpg?alt=media&token=108fa706-66b9-44d0-88b9-0321d7d9ffd7)
+![User Page](https://firebasestorage.googleapis.com/v0/b/kanzankazu-itung2an.appspot.com/o/project%2F1709049440212.jpg?alt=media&token=4dad9c54-2f53-491e-aca6-7cc22a6b21ce)
